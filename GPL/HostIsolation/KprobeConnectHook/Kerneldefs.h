@@ -81,6 +81,7 @@ struct sockaddr {
 	char sa_data[14];
 };
 
+#if 0
 struct pt_regs {
 	long unsigned int r15;
 	long unsigned int r14;
@@ -105,3 +106,15 @@ struct pt_regs {
 	long unsigned int ss;
 };
 
+#endif
+
+// from aarch64 ptrace.h:
+/*
+ * User structures for general purpose, floating point and debug registers.
+ */
+struct user_pt_regs {
+    __u64       regs[31];
+    __u64       sp;
+    __u64       pc;
+    __u64       pstate;
+};

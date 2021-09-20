@@ -11,6 +11,7 @@
 
 set -euv
 
+export PATH="/opt/endpoint-dev/dev/toolchain/aarch64-linux-gnu/bin:${PATH}"
 ./contrib/build_libelf.sh
 make -C GPL/HostIsolation/TcFilter BUILD_STATIC_LIB=1
 make -C non-GPL/TcLoader BUILD_STATIC_LIB=1
